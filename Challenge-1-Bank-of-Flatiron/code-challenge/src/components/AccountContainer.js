@@ -24,7 +24,7 @@ function AccountContainer() {
     // create an object (empty form) to add to transactions form
     let newObj={
       //  setting the id to continue from last id in the array
-      id:transactions.length+1,
+      id:String(transactions.length+1),
       date:e.target.date.value,
       description:e.target.description.value,
       category:e.target.category.value,
@@ -45,15 +45,18 @@ function AccountContainer() {
       })
       .catch((error) => console.log(error));
   };
+  
 
   // FILTERED value
   
       const filteredResults = transactions.filter((transaction) => {
         // remove the strict case 
-        if(transaction.description.toLowerCase().includes(searchValue.toLocaleLowerCase()) )return transaction
+        if(transaction.description.toLowerCase().includes(searchValue.toLowerCase()) )return transaction
           else if(searchValue==='') return true
           
     })
+
+
     
 
   return (

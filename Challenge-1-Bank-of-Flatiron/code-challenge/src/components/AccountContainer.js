@@ -21,8 +21,9 @@ function AccountContainer() {
   // Adding transaction "POST"
   const addTransaction = (e) => {
     e.preventDefault();
+    // create an object (empty form) to add to transactions form
     let newObj={
-      //  setting the id to the next id in the array
+      //  setting the id to continue from last id in the array
       id:transactions.length+1,
       date:e.target.date.value,
       description:e.target.description.value,
@@ -30,12 +31,13 @@ function AccountContainer() {
       amount:e.target.amount.value
     }   
     let newArray=[...transactions,newObj] 
+    // assigning the new array to the setTransaction function
     setTransactions(newArray)
+    //  resetting the input to empty once a transaction is already added
     e.target.reset()
     fetch("http://localhost:8001/transactions", {
       method: "POST",
       headers: { "content-Type": "application/json" },
-      // changing amount to integer
       body: JSON.stringify(newObj),
     })
       .then((response) => {
@@ -47,8 +49,10 @@ function AccountContainer() {
   // FILTERED value
   
       const filteredResults = transactions.filter((transaction) => {
+        // remove the strict case 
         if(transaction.description.toLowerCase().includes(searchValue.toLocaleLowerCase()) )return transaction
           else if(searchValue==='') return true
+          
     })
     
 

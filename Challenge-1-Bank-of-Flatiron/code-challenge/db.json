@@ -85,25 +85,32 @@
       "amount": -975
     },
     {
-      "id": 13,
+      "id": "13",
       "date": "2024-07-29",
       "description": "New One",
       "category": "Food",
       "amount": "680"
     },
     {
-      "id": 14,
+      "id": "14",
       "date": "2024-07-29",
       "description": "New One",
       "category": "Food",
       "amount": "680"
     },
     {
-      "id": 15,
+      "id": "15",
       "date": "2024-07-29",
       "description": "New One",
       "category": "Food",
       "amount": "680"
+    },
+    {
+      "id": 16,
+      "date": "",
+      "description": "",
+      "category": "",
+      "amount": ""
     }
   ]
 }
